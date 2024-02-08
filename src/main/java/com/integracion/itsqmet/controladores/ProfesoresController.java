@@ -59,12 +59,14 @@ public class ProfesoresController {
             Profesores profesor = optionalProfesor.get();
 
             // Actualizar los campos del autor con los datos proporcionados
-            profesor.setNombreMateria(profesorData.getNombreMateria());
-            materia.setNota(materiaData.getNota());
+            profesor.setNombreProfesor(profesorData.getNombreProfesor());
+            profesor.setApellidoProfesor(profesorData.getApellidoProfesor());
+            profesor.setMateriaProfesor(profesorData.getMateriaProfesor());
+            profesor.setCorreoProfesor(profesorData.getCorreoProfesor());
 
             // Guardar los cambios en la base de datos
-            Materias materiaSaved = profesorRepository.save(materia);
-            return ResponseEntity.ok(materiaSaved); // Devolver el autor actualizado
+            Profesores profesorSaved = profesorRepository.save(profesor);
+            return ResponseEntity.ok(profesorSaved); // Devolver el autor actualizado
         } else {
             return ResponseEntity.notFound().build(); // Devolver error si el autor no existe
         }
