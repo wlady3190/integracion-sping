@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.integracion.itsqmet.entidades.Materias;
 import com.integracion.itsqmet.entidades.Profesores;
 import com.integracion.itsqmet.repositorios.MateriasRepository;
+import com.integracion.itsqmet.repositorios.ProfesorRepository;
 
 @RestController
 public class ProfesoresController {
@@ -59,10 +60,10 @@ public class ProfesoresController {
             Profesores profesor = optionalProfesor.get();
 
             // Actualizar los campos del autor con los datos proporcionados
-            profesor.setNombreProfesor(profesorData.getNombreProfesor());
-            profesor.setApellidoProfesor(profesorData.getApellidoProfesor());
-            profesor.setMateriaProfesor(profesorData.getMateriaProfesor());
-            profesor.setCorreoProfesor(profesorData.getCorreoProfesor());
+            profesor.setNombre(profesorData.getNombre());
+            profesor.setApellido(profesorData.getApellido());
+            profesor.setMateria(profesorData.getMateria());
+            profesor.setCorreo(profesorData.getCorreo());
 
             // Guardar los cambios en la base de datos
             Profesores profesorSaved = profesorRepository.save(profesor);
