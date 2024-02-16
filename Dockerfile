@@ -7,6 +7,6 @@ WORKDIR /app
 
 COPY target/*.jar /app/spring.jar
 
-EXPOSE 9090
+EXPOSE 9091
 
 CMD [ "java", "-jar", "spring.jar" ]
